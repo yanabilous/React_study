@@ -23,9 +23,9 @@ let state = {
             {id: 6, name: 'Vasya3'}
         ]
     },
-    sidebar{
-
-    }
+    // sidebar{
+    //
+    // }
 
 }
 
