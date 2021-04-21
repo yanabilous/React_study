@@ -4,9 +4,6 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
 
-
-
-
 const Dialogs = (props) => {
 
     // let dialogsData = [
@@ -34,22 +31,31 @@ const Dialogs = (props) => {
     // ];
 
 
-    let messagesElements = props.state.messagesData.map( message => <Message message={message.message} /> )
-                // {/*<Message message={messagesData[0].message} id={messagesData[0].id}/>*/}
-                // {/*<Message message={messagesData[1].message} id={messagesData[1].id}/>*/}
-                // {/*<Message message={messagesData[2].message} id={messagesData[2].id}/>*/}
-                // {/*<Message message={messagesData[3].message} id={messagesData[3].id}/>*/}
+    let messagesElements = props.state.messagesData.map(message => <Message message={message.message}/>)
+    // {/*<Message message={messagesData[0].message} id={messagesData[0].id}/>*/}
+    // {/*<Message message={messagesData[1].message} id={messagesData[1].id}/>*/}
+    // {/*<Message message={messagesData[2].message} id={messagesData[2].id}/>*/}
+    // {/*<Message message={messagesData[3].message} id={messagesData[3].id}/>*/}
+    let newMessageElement = React.createRef()
+    let addMessage = () => {
+        let text = newMessageElement.current.value
+        alert(text)
+    }
 
-    return (
-        <div className={s.dialogs}>
-            <div className={s.dialogsItems}>
-                {dialogsElements}
-            </div>
-            <div className={s.messages}>
-                {messagesElements}
+    return (<div>
+            <div className={s.dialogs}>
+                <div className={s.dialogsItems}>
+                    {dialogsElements}
+                </div>
+                <div>
+                    <div className={s.messages}>
+                        {messagesElements}
+                    </div>
+                     <textarea ref={newMessageElement}></textarea>
+                    <div><button onClick={addMessage}>Add message</button></div>
+                </div>
             </div>
         </div>
-
     )
 }
 
