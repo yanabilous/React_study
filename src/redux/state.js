@@ -28,16 +28,9 @@ let state = {
             {id: 6, name: 'Vasya3'}
         ]
     },
-    sidebarPage: {
-        friendsData: [
-            {id: 1, name: 'Yana1'},
-            {id: 2, name: 'Taras1'},
-            {id: 3, name: 'Yulia1'},
-        ]
+    sidebar{
 
     }
-
-}
 
 
 export const addPost = () => {
